@@ -1,11 +1,22 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import Header from '../components/Header';
+import ExperienceSection from '../components/ExperienceSection';
+import EducationSection from '../components/EducationSection';
+import SkillsSection from '../components/SkillsSection';
+import ActivitiesSection from '../components/ActivitiesSection';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+      <div className="max-w-5xl mx-auto px-4 py-8">
+        <Header />
+        <div className="grid gap-8 mt-8">
+          <ExperienceSection />
+          <EducationSection />
+          <SkillsSection />
+          <ActivitiesSection />
+        </div>
       </div>
     </div>
   );
