@@ -9,78 +9,87 @@ const EducationSection = () => {
 
   const education = [
     {
-      title: "Club Cripto UCEMA | Dominando DeFi desde cero",
-      institution: "UCEMA",
-      period: "Junio 2025",
-      status: "En curso",
-      type: "blockchain"
-    },
-    {
-      title: "Gestión Estratégica, Liderazgo y Toma de Decisiones",
-      institution: "CAME - ITBA",
-      period: "Mayo 2025 - Actualidad",
-      status: "En curso",
-      type: "management"
-    },
-    {
-      title: "Crecimiento - AWS Startups",
-      institution: "Founders School",
-      period: "Enero 2025 - Marzo 2025",
-      status: "Completado",
-      type: "tech"
-    },
-    {
       title: "Licenciatura en Administración de Empresas",
       institution: "UCASAL",
       period: "Enero 2018 - Actualidad",
       details: "45 de 49 materias completadas",
       status: "En curso",
-      type: "degree"
-    },
-    {
-      title: "Bootcamp Avalanche",
-      institution: "UTN.BA",
-      period: "Octubre 2024",
-      status: "Completado",
-      type: "blockchain"
-    },
-    {
-      title: "Ethereum Developer Pack",
-      institution: "UCEMA - ETHKIPU",
-      period: "Septiembre 2024 - Octubre 2024",
-      status: "Completado",
-      type: "blockchain"
-    },
-    {
-      title: "Back Office para Mercado de Capitales",
-      institution: "Bolsa de Comercio de Buenos Aires",
-      period: "Agosto 2024 - Octubre 2024",
-      status: "Completado",
-      type: "finance"
-    },
-    {
-      title: "Excel Avanzado - Power BI - SQL Inicial",
-      institution: "B.A Multiplica 2.0 - UTN",
-      period: "Septiembre 2023 - Diciembre 2023",
-      status: "Completado",
-      type: "tech"
+      type: "degree",
+      priority: 1
     },
     {
       title: "Experto Universitario en Mercado de Capitales",
       institution: "UTN.BA",
       period: "Septiembre 2019 - Agosto 2020",
       status: "Completado",
-      type: "finance"
+      type: "finance",
+      priority: 2
+    },
+    {
+      title: "Gestión Estratégica, Liderazgo y Toma de Decisiones",
+      institution: "CAME - ITBA",
+      period: "Mayo 2025 - Actualidad",
+      status: "En curso",
+      type: "management",
+      priority: 3
+    },
+    {
+      title: "Back Office para Mercado de Capitales",
+      institution: "Bolsa de Comercio de Buenos Aires",
+      period: "Agosto 2024 - Octubre 2024",
+      status: "Completado",
+      type: "finance",
+      priority: 4
+    },
+    {
+      title: "Excel Avanzado - Power BI - SQL Inicial",
+      institution: "B.A Multiplica 2.0 - UTN",
+      period: "Septiembre 2023 - Diciembre 2023",
+      status: "Completado",
+      type: "tech",
+      priority: 5
+    },
+    {
+      title: "Crecimiento - AWS Startups",
+      institution: "Founders School",
+      period: "Enero 2025 - Marzo 2025",
+      status: "Completado",
+      type: "tech",
+      priority: 6
+    },
+    {
+      title: "Club Cripto UCEMA | Dominando DeFi desde cero",
+      institution: "UCEMA",
+      period: "Junio 2025",
+      status: "En curso",
+      type: "blockchain",
+      priority: 7
+    },
+    {
+      title: "Ethereum Developer Pack",
+      institution: "UCEMA - ETHKIPU",
+      period: "Septiembre 2024 - Octubre 2024",
+      status: "Completado",
+      type: "blockchain",
+      priority: 8
+    },
+    {
+      title: "Bootcamp Avalanche",
+      institution: "UTN.BA",
+      period: "Octubre 2024",
+      status: "Completado",
+      type: "blockchain",
+      priority: 9
     }
   ];
 
   const getTypeColor = (type: string) => {
     switch (type) {
       case 'degree': return 'from-blue-50 to-blue-100 border-blue-200';
-      case 'blockchain': return 'from-purple-50 to-purple-100 border-purple-200';
       case 'finance': return 'from-green-50 to-green-100 border-green-200';
-      case 'tech': return 'from-orange-50 to-orange-100 border-orange-200';
       case 'management': return 'from-indigo-50 to-indigo-100 border-indigo-200';
+      case 'tech': return 'from-orange-50 to-orange-100 border-orange-200';
+      case 'blockchain': return 'from-purple-50 to-purple-100 border-purple-200';
       default: return 'from-gray-50 to-gray-100 border-gray-200';
     }
   };
@@ -100,6 +109,15 @@ const EducationSection = () => {
         Completado
       </span>
     );
+  };
+
+  const getPriorityIndicator = (priority: number) => {
+    if (priority <= 3) {
+      return (
+        <div className="absolute top-2 left-2 w-3 h-3 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full shadow-sm"></div>
+      );
+    }
+    return null;
   };
 
   return (
@@ -130,6 +148,7 @@ const EducationSection = () => {
                   className={`group bg-gradient-to-br ${getTypeColor(edu.type)} p-5 rounded-xl border-2 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-[1.02] relative overflow-hidden`}
                 >
                   <div className="absolute top-0 right-0 w-20 h-20 bg-white/20 rounded-bl-full"></div>
+                  {getPriorityIndicator(edu.priority)}
                   
                   <div className="flex justify-between items-start mb-3">
                     <h3 className="font-bold text-slate-800 mb-1 leading-tight text-sm group-hover:text-slate-900 transition-colors">
