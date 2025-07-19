@@ -34,12 +34,20 @@ const EducationSection = () => {
       priority: 3
     },
     {
+      title: "Dominando DeFi",
+      institution: "UCEMA",
+      period: "Mayo 2025 - Junio 2025",
+      status: "Completado",
+      type: "blockchain",
+      priority: 4
+    },
+    {
       title: "Back Office para Mercado de Capitales",
       institution: "Bolsa de Comercio de Buenos Aires",
       period: "Agosto 2024 - Octubre 2024",
       status: "Completado",
       type: "finance",
-      priority: 4
+      priority: 5
     },
     {
       title: "Excel Avanzado - Power BI - SQL Inicial",
@@ -47,7 +55,7 @@ const EducationSection = () => {
       period: "Septiembre 2023 - Diciembre 2023",
       status: "Completado",
       type: "tech",
-      priority: 5
+      priority: 6
     },
     {
       title: "Crecimiento - AWS Startups",
@@ -55,14 +63,6 @@ const EducationSection = () => {
       period: "Enero 2025 - Marzo 2025",
       status: "Completado",
       type: "tech",
-      priority: 6
-    },
-    {
-      title: "Club Cripto UCEMA | Dominando DeFi desde cero",
-      institution: "UCEMA",
-      period: "Junio 2025",
-      status: "En curso",
-      type: "blockchain",
       priority: 7
     },
     {
