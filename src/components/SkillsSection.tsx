@@ -10,7 +10,7 @@ const SkillsSection = () => {
   const technicalSkills = [
     "Python", "SQL", "Power BI", "Excel Avanzado", "Looker Studio", "Tango Gestión",
     "Google Analytics", "Visual Basic", "GitHub", "Blockchain", "Solidity", "Web3",
-    "Canva", "Office 365", "Deepnote", "Telemetría"
+    "Canva", "Office 365", "Deepnote", "Telemetría", "N8N", "Lovable", "Cursor", "GitHub Copilot"
   ];
 
   const softSkills = [
