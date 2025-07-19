@@ -19,8 +19,8 @@ const ActivitiesSection = () => {
     { name: "Bitcoin Day - Fundación BTC", category: "blockchain" },
     { name: "Valuación de Empresas - UCEMA", category: "finance" },
     { name: "Tech Builders - Rather Labs", category: "blockchain" },
-    { name: "Copa América - Solana", category: "blockchain" },
-    { name: "Nerdconf - Polkadot", category: "blockchain" }
+    { name: "Copa América Solana Hackathon", category: "blockchain" },
+    { name: "Nerdconf Polkadot Hackathon", category: "blockchain" }
   ];
 
   const getCategoryIcon = (category: string) => {
