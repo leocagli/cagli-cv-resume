@@ -14,10 +14,11 @@ const ActivitiesSection = () => {
     { name: "Markets Experience - Rankia", category: "finance" },
     { name: "Finanzas del Futuro - Vibrant", category: "finance" },
     { name: "Ivan Scherman - BC Talks", category: "blockchain" },
-    { name: "Hackaton - Aleph", category: "tech" },
+    { name: "Aleph Hackathon", category: "blockchain" },
+    { name: "Aleph de Verano Hackathon", category: "blockchain" },
     { name: "Bitcoin Day - Fundación BTC", category: "blockchain" },
     { name: "Valuación de Empresas - UCEMA", category: "finance" },
-    { name: "Tech Builders - Rather Labs", category: "tech" },
+    { name: "Tech Builders - Rather Labs", category: "blockchain" },
     { name: "Copa América - Solana", category: "blockchain" },
     { name: "Nerdconf - Polkadot", category: "blockchain" }
   ];

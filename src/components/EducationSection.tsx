@@ -54,7 +54,7 @@ const EducationSection = () => {
       institution: "B.A Multiplica 2.0 - UTN",
       period: "Septiembre 2023 - Diciembre 2023",
       status: "Completado",
-      type: "tech",
+      type: "blockchain",
       priority: 6
     },
     {
@@ -62,7 +62,7 @@ const EducationSection = () => {
       institution: "Founders School",
       period: "Enero 2025 - Marzo 2025",
       status: "Completado",
-      type: "tech",
+      type: "blockchain",
       priority: 7
     },
     {
