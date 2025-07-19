@@ -18,60 +18,20 @@ const EducationSection = () => {
       priority: 1
     },
     {
-      title: "Experto Universitario en Mercado de Capitales",
-      institution: "UTN.BA",
-      period: "Septiembre 2019 - Agosto 2020",
-      status: "Completado",
-      type: "finance",
-      priority: 2
-    },
-    {
       title: "Gestión Estratégica, Liderazgo y Toma de Decisiones",
       institution: "CAME - ITBA",
       period: "Mayo 2025 - Actualidad",
       status: "En curso",
       type: "management",
-      priority: 3
-    },
-    {
-      title: "Dominando DeFi",
-      institution: "UCEMA",
-      period: "Mayo 2025 - Junio 2025",
-      status: "Completado",
-      type: "blockchain",
-      priority: 4
-    },
-    {
-      title: "Back Office para Mercado de Capitales",
-      institution: "Bolsa de Comercio de Buenos Aires",
-      period: "Agosto 2024 - Octubre 2024",
-      status: "Completado",
-      type: "finance",
-      priority: 5
-    },
-    {
-      title: "Excel Avanzado - Power BI - SQL Inicial",
-      institution: "B.A Multiplica 2.0 - UTN",
-      period: "Septiembre 2023 - Diciembre 2023",
-      status: "Completado",
-      type: "blockchain",
-      priority: 6
+      priority: 2
     },
     {
       title: "Crecimiento - AWS Startups",
       institution: "Founders School",
       period: "Enero 2025 - Marzo 2025",
       status: "Completado",
-      type: "blockchain",
-      priority: 7
-    },
-    {
-      title: "Ethereum Developer Pack",
-      institution: "UCEMA - ETHKIPU",
-      period: "Septiembre 2024 - Octubre 2024",
-      status: "Completado",
-      type: "blockchain",
-      priority: 8
+      type: "management",
+      priority: 3
     },
     {
       title: "Bootcamp Avalanche",
@@ -79,7 +39,111 @@ const EducationSection = () => {
       period: "Octubre 2024",
       status: "Completado",
       type: "blockchain",
+      priority: 4
+    },
+    {
+      title: "Ethereum Developer Pack",
+      institution: "UCEMA - ETHKIPU",
+      period: "Septiembre 2024 - Octubre 2024",
+      status: "Completado",
+      type: "blockchain",
+      priority: 5
+    },
+    {
+      title: "Onchain Builder Lab",
+      institution: "EDUCATETH",
+      period: "Septiembre 2024 - Diciembre 2024",
+      status: "Completado",
+      type: "blockchain",
+      priority: 6
+    },
+    {
+      title: "Back Office para Mercado de Capitales",
+      institution: "Bolsa de Comercio de Buenos Aires",
+      period: "Agosto 2024 - Octubre 2024",
+      status: "Completado",
+      type: "finance",
+      priority: 7
+    },
+    {
+      title: "Excel Avanzado - Power BI - SQL Inicial",
+      institution: "B.A Multiplica 2.0 - UTN",
+      period: "Septiembre 2023 - Diciembre 2023",
+      status: "Completado",
+      type: "tech",
+      priority: 8
+    },
+    {
+      title: "Tango Gestión - Contabilidad",
+      institution: "Axoft - UNSA",
+      period: "Agosto 2023 - Octubre 2023",
+      status: "Completado",
+      type: "tech",
       priority: 9
+    },
+    {
+      title: "Productividad con CHAT GPT-4",
+      institution: "UTN.BA",
+      period: "Junio 2023 - Agosto 2023",
+      status: "Completado",
+      type: "tech",
+      priority: 10
+    },
+    {
+      title: "Big Data - Codo a Codo",
+      institution: "Gob.AR",
+      period: "Marzo 2023 - Agosto 2023",
+      status: "Completado",
+      type: "tech",
+      priority: 11
+    },
+    {
+      title: "Python Inicial",
+      institution: "UTN.BA",
+      period: "Febrero 2022 - Abril 2022",
+      status: "Completado",
+      type: "tech",
+      priority: 12
+    },
+    {
+      title: "Diplomatura en Marketing Político",
+      institution: "UTN.BA",
+      period: "Marzo 2020 - Agosto 2020",
+      status: "Completado",
+      type: "management",
+      priority: 13
+    },
+    {
+      title: "Experto Universitario en Mercado de Capitales",
+      institution: "UTN.BA",
+      period: "Septiembre 2019 - Agosto 2020",
+      status: "Completado",
+      type: "finance",
+      priority: 14
+    },
+    {
+      title: "Administración de Empresas Petroleras",
+      institution: "ITP Neuquén",
+      period: "Marzo 2016 - Diciembre 2016",
+      status: "Completado",
+      type: "management",
+      priority: 15
+    },
+    {
+      title: "Herramientas Administrativas - Excel Avanzado",
+      institution: "Fundación Romero",
+      period: "Agosto 2012 - Diciembre 2012",
+      status: "Completado",
+      type: "tech",
+      priority: 16
+    },
+    {
+      title: "Tango Gestión",
+      institution: "Fundación Romero",
+      period: "Marzo 2012 - Junio 2012",
+      status: "Completado",
+      type: "tech",
+      priority: 17
     }
   ];
 

@@ -9,25 +9,40 @@ const ActivitiesSection = () => {
 
   const activities = [
     { name: "Pitch Competition - Cardano", category: "blockchain" },
-    { name: "Club de Finanzas - UBA", category: "finance" },
     { name: "Expo EFI Argentina - CEA", category: "finance" },
     { name: "Markets Experience - Rankia", category: "finance" },
     { name: "Finanzas del Futuro - Vibrant", category: "finance" },
+    { name: "Valuación de Empresas - UCEMA", category: "finance" },
+    { name: "Abriendo Cocos - Cocoscap", category: "finance" },
     { name: "Ivan Scherman - BC Talks", category: "blockchain" },
     { name: "Aleph Hackathon", category: "blockchain" },
     { name: "Aleph de Verano Hackathon", category: "blockchain" },
     { name: "Bitcoin Day - Fundación BTC", category: "blockchain" },
-    { name: "Valuación de Empresas - UCEMA", category: "finance" },
     { name: "Tech Builders - Rather Labs", category: "blockchain" },
     { name: "Copa América Solana Hackathon", category: "blockchain" },
     { name: "Nerdconf Polkadot Hackathon", category: "blockchain" }
   ];
+
+  const memberships = [
+    { name: "Club Cripto UCEMA", category: "membership" },
+    { name: "Club de Finanzas UBA", category: "membership" },
+    { name: "Club de Finanzas UCEMA", category: "membership" }
+  ];
+
+  const ambassadorships = [
+    { name: "Embajador y Speaker - Cultura C3", category: "ambassador" },
+    { name: "Embajador y Speaker - Bitcoin Argentina", category: "ambassador" }
+  ];
+
+  const allActivities = [...activities, ...memberships, ...ambassadorships];
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case 'blockchain': return <Star className="text-purple-600" size={14} />;
       case 'finance': return <Award className="text-green-600" size={14} />;
       case 'tech': return <Users className="text-blue-600" size={14} />;
+      case 'membership': return <Users className="text-indigo-600" size={14} />;
+      case 'ambassador': return <Trophy className="text-orange-600" size={14} />;
       default: return <Trophy className="text-yellow-600" size={14} />;
     }
   };
@@ -37,22 +52,26 @@ const ActivitiesSection = () => {
       case 'blockchain': return 'from-purple-50 to-purple-100 border-purple-200 hover:from-purple-100 hover:to-purple-200';
       case 'finance': return 'from-green-50 to-green-100 border-green-200 hover:from-green-100 hover:to-green-200';
       case 'tech': return 'from-blue-50 to-blue-100 border-blue-200 hover:from-blue-100 hover:to-blue-200';
+      case 'membership': return 'from-indigo-50 to-indigo-100 border-indigo-200 hover:from-indigo-100 hover:to-indigo-200';
+      case 'ambassador': return 'from-orange-50 to-orange-100 border-orange-200 hover:from-orange-100 hover:to-orange-200';
       default: return 'from-yellow-50 to-yellow-100 border-yellow-200 hover:from-yellow-100 hover:to-yellow-200';
     }
   };
 
-  const groupedActivities = activities.reduce((acc, activity) => {
+  const groupedActivities = allActivities.reduce((acc, activity) => {
     if (!acc[activity.category]) {
       acc[activity.category] = [];
     }
     acc[activity.category].push(activity);
     return acc;
-  }, {} as Record<string, typeof activities>);
+  }, {} as Record<string, typeof allActivities>);
 
   const categoryLabels = {
     blockchain: 'Blockchain & Crypto',
     finance: 'Finanzas',
-    tech: 'Tecnología'
+    tech: 'Tecnología',
+    membership: 'Membresías',
+    ambassador: 'Embajador & Speaker'
   };
 
   return (
@@ -68,7 +87,7 @@ const ActivitiesSection = () => {
                 Actividades y Participaciones
               </span>
               <div className="flex items-center gap-2">
-                <span className="text-sm font-normal text-slate-500">{activities.length} eventos</span>
+                <span className="text-sm font-normal text-slate-500">{allActivities.length} actividades</span>
                 {isOpen ? <ChevronUp className="text-slate-400" /> : <ChevronDown className="text-slate-400" />}
               </div>
             </CardTitle>

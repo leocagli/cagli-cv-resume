@@ -27,7 +27,7 @@ const ExperienceSection = () => {
         "Elaboración de reportes ejecutivos",
         "Supervisión y control de operaciones"
       ],
-      reference: "Manuel Mosquera - Jefe de Logística - 11 2535 0522"
+      reference: "Manuel Mosquera - Jefe de Logística - 1125350522"
     },
     {
       title: "Analista Financiero - Responsable de Pagos",
@@ -39,11 +39,11 @@ const ExperienceSection = () => {
         "Conciliaciones bancarias y contables",
         "Asistencia en auditorías externas"
       ],
-      reference: "Andrea Santana - CFO - 11 3444 4990"
+      reference: "Andrea Santana - CFO - 1134444990"
     },
     {
       title: "Técnico IT - Auxiliar de Eventos",
-      company: "Congress Rental",
+      company: "Congress Rental y otros",
       period: "Noviembre 2021 - Diciembre 2022",
       responsibilities: [
         "Soporte técnico en eventos corporativos",
@@ -61,7 +61,7 @@ const ExperienceSection = () => {
     },
     {
       title: "Propietario - Asesor Financiero",
-      company: "Bitcoin.Defi",
+      company: "Asesoría Financiera \"Bitcoin.Defi\"",
       period: "Diciembre 2020 - Actualidad",
       responsibilities: [
         "Asesoramiento en inversiones en criptomonedas",
@@ -76,7 +76,36 @@ const ExperienceSection = () => {
         "Desarrollo de contenido digital gubernamental",
         "Asistencia en operaciones administrativas"
       ],
-      reference: "Agustina Gallo - Ex Jefa de Gabinete - 387 488 0497"
+      reference: "Agustina Gallo - Ex Jefa de Gabinete - 3874880497"
+    },
+    {
+      title: "Propietario",
+      company: "Dietéticas \"Nature and Fitness\"",
+      period: "Diciembre 2017 - Actualidad",
+      responsibilities: [
+        "Gestión integral del negocio",
+        "Administración y ventas"
+      ]
+    },
+    {
+      title: "Fichero",
+      company: "Mac Group - Silver Dreams",
+      period: "Marzo 2017 - Septiembre 2017",
+      responsibilities: [
+        "Gestión de base de datos",
+        "Atención al cliente"
+      ],
+      reference: "Mariela Nasser - Ex Gerente Zonal - 3888433382"
+    },
+    {
+      title: "Vendedor - Guía Turístico",
+      company: "Flecha Bus Viajes - Dask Travel",
+      period: "Abril 2012 - Diciembre 2016",
+      responsibilities: [
+        "Venta de paquetes turísticos",
+        "Guía y acompañamiento de turistas"
+      ],
+      reference: "Matías Dousset - CEO - 3876840405"
     }
   ];
 
