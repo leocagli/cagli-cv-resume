@@ -9,15 +9,6 @@ const ExperienceSection = () => {
 
   const experiences = [
     {
-      title: "Embajador - Finanzas",
-      company: "Comunidad Cripto \"Cultura C3\"",
-      period: "Marzo 2025 - Actualidad",
-      responsibilities: [
-        "Desarrollo de estrategias financieras en ecosistema cripto",
-        "Educación y capacitación en finanzas descentralizadas"
-      ]
-    },
-    {
       title: "Analista Logístico - Supervisor",
       company: "Food Packaging",
       period: "Septiembre 2023 - Enero 2024",

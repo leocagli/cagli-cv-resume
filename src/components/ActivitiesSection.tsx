@@ -20,7 +20,8 @@ const ActivitiesSection = () => {
     { name: "Bitcoin Day - Fundación BTC", category: "blockchain" },
     { name: "Tech Builders - Rather Labs", category: "blockchain" },
     { name: "Copa América Solana Hackathon", category: "blockchain" },
-    { name: "Nerdconf Polkadot Hackathon", category: "blockchain" }
+    { name: "Nerdconf Polkadot Hackathon", category: "blockchain" },
+    { name: "Stellar ConstellAr Hackathon - Ganador con ReFinance (Mejor Proyecto)", category: "blockchain" }
   ];
 
   const memberships = [
