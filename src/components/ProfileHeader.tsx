@@ -38,14 +38,14 @@ const ProfileHeader = () => {
                 </Badge>
               </div>
               
-              {/* Hackathon Winner Highlight */}
-              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-slate-900 px-6 py-3 rounded-2xl font-bold text-base shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 mb-6">
-                <Star className="animate-spin" size={20} />
-                🏆 GANADOR HACKATHON STELLAR ConstellAr - Proyecto ReFinance
-                <Star className="animate-spin" size={20} />
-              </div>
             </div>
             
+            {/* Hackathon Winner Highlight */}
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-slate-900 px-4 py-2 rounded-xl font-semibold text-sm shadow-lg mb-4">
+              <Trophy size={16} />
+              🏆 Ganador Hackathon Stellar ConstellAr
+            </div>
+
             {/* Contact Info Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
               <a 

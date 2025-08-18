@@ -36,7 +36,7 @@ const EducationSection = () => {
     {
       title: "Bootcamp Avalanche",
       institution: "UTN.BA",
-      period: "Octubre 2024",
+      period: "Julio - Agosto 2024",
       status: "Completado",
       type: "blockchain",
       priority: 4

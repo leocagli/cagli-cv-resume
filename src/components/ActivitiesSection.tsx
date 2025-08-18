@@ -21,7 +21,8 @@ const ActivitiesSection = () => {
     { name: "Tech Builders - Rather Labs", category: "blockchain" },
     { name: "Copa América Solana Hackathon", category: "blockchain" },
     { name: "Nerdconf Polkadot Hackathon", category: "blockchain" },
-    { name: "Stellar ConstellAr Hackathon - Ganador con ReFinance (Mejor Proyecto)", category: "blockchain" }
+    { name: "Stellar ConstellAr Hackathon - Ganador con ReFinance (Mejor Proyecto)", category: "blockchain" },
+    { name: "Hackathon Stellar - Becado", category: "blockchain" }
   ];
 
   const memberships = [
