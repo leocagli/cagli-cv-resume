@@ -33,7 +33,8 @@ const ActivitiesSection = () => {
 
   const ambassadorships = [
     { name: "Embajador y Speaker - Cultura C3", category: "ambassador" },
-    { name: "Embajador y Speaker - Bitcoin Argentina", category: "ambassador" }
+    { name: "Embajador y Speaker - Bitcoin Argentina", category: "ambassador" },
+    { name: "Embajador - Stellar", category: "ambassador" }
   ];
 
   const allActivities = [...activities, ...memberships, ...ambassadorships];
