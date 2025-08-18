@@ -2,7 +2,7 @@ import React from 'react';
 import { Mail, Phone, MapPin, Linkedin, Github, Trophy, Star } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import profileImage from '@/assets/profile-photo.jpg';
+import profileImage from '/lovable-uploads/74e0b6e2-f1b5-4142-b1ea-0539f1dc52c5.png';
 
 const ProfileHeader = () => {
   return (

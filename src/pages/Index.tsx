@@ -5,12 +5,14 @@ import ExperienceSection from '../components/ExperienceSection';
 import EducationSection from '../components/EducationSection';
 import SkillsSection from '../components/SkillsSection';
 import ActivitiesSection from '../components/ActivitiesSection';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselApi } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useEffect } from 'react';
 
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [api, setApi] = useState<CarouselApi>();
   
   const sections = [
     {
@@ -39,12 +41,23 @@ const Index = () => {
     }
   ];
 
+  useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    api.on("select", () => {
+      setCurrentSlide(api.selectedScrollSnap())
+    })
+  }, [api])
+
   const navigateToSection = (index: number) => {
     setCurrentSlide(index);
+    api?.scrollTo(index);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-x-hidden">
       {/* Background decoration */}
       <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-100 via-transparent to-transparent pointer-events-none"></div>
       <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-purple-100 via-transparent to-transparent pointer-events-none"></div>
@@ -76,10 +89,12 @@ const Index = () => {
         
         {/* Carousel Container */}
         <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          <Carousel className="w-full" 
+          <Carousel 
+            setApi={setApi}
+            className="w-full" 
             opts={{
               align: "start",
-              loop: true,
+              loop: false,
             }}
           >
             <CarouselContent className="ml-0">
