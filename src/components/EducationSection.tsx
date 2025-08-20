@@ -185,61 +185,67 @@ const EducationSection = () => {
   };
 
   return (
-    <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-      <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-        <CollapsibleTrigger asChild>
-          <CardHeader className="cursor-pointer hover:bg-gradient-to-r hover:from-slate-50 hover:to-blue-50 transition-all duration-200">
-            <CardTitle className="flex items-center justify-between text-2xl text-slate-800">
-              <span className="flex items-center gap-3">
-                <div className="p-2 bg-gradient-to-br from-green-500 to-green-600 rounded-lg shadow-sm">
-                  <GraduationCap className="text-white" size={24} />
+    <section>
+      <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+          <CollapsibleTrigger asChild>
+            <CardHeader className="cursor-pointer hover:bg-gradient-to-r hover:from-slate-50 hover:to-blue-50 transition-all duration-200">
+              <div className="flex items-center justify-between">
+                <h2 className="text-2xl text-slate-800 flex items-center gap-3 font-bold">
+                  <div className="p-2 bg-gradient-to-br from-green-500 to-green-600 rounded-lg shadow-sm">
+                    <GraduationCap className="text-white" size={24} />
+                  </div>
+                  Educación y Formación | Education & Training
+                </h2>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-normal text-slate-500">{education.length} programas</span>
+                  {isOpen ? <ChevronUp className="text-slate-400" /> : <ChevronDown className="text-slate-400" />}
                 </div>
-                Educación
-              </span>
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-normal text-slate-500">{education.length} programas</span>
-                {isOpen ? <ChevronUp className="text-slate-400" /> : <ChevronDown className="text-slate-400" />}
               </div>
-            </CardTitle>
-          </CardHeader>
-        </CollapsibleTrigger>
-        <CollapsibleContent>
-          <CardContent className="pt-0">
-            <div className="grid gap-6 md:grid-cols-2">
-              {education.map((edu, index) => (
-                <div 
-                  key={index} 
-                  className={`group bg-gradient-to-br ${getTypeColor(edu.type)} p-5 rounded-xl border-2 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-[1.02] relative overflow-hidden`}
-                >
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-white/20 rounded-bl-full"></div>
-                  {getPriorityIndicator(edu.priority)}
-                  
-                  <div className="flex justify-between items-start mb-3">
-                    <h3 className="font-bold text-slate-800 mb-1 leading-tight text-sm group-hover:text-slate-900 transition-colors">
-                      {edu.title}
-                    </h3>
-                    {getStatusBadge(edu.status)}
-                  </div>
-                  
-                  <p className="font-semibold text-slate-700 mb-3 text-sm">{edu.institution}</p>
-                  
-                  <div className="flex items-center gap-2 text-slate-600 text-xs mb-3">
-                    <Calendar size={12} className="flex-shrink-0" />
-                    <span>{edu.period}</span>
-                  </div>
-                  
-                  {edu.details && (
-                    <div className="bg-white/80 backdrop-blur-sm px-3 py-2 rounded-lg">
-                      <p className="text-xs text-slate-700 font-medium">{edu.details}</p>
+              {/* Keywords for ATS */}
+              <div className="hidden">
+                <span>Education, Educación, University, Universidad, Business Administration, Administración de Empresas, Leadership, Liderazgo, Management, AWS, Blockchain, Stellar, Avalanche, Degree, Licenciatura, Certificate, Professional Development, UCASAL, ITBA, MBA, Controller Training, Financial Education</span>
+              </div>
+            </CardHeader>
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <CardContent className="pt-0">
+              <div className="grid gap-6 md:grid-cols-2">
+                {education.map((edu, index) => (
+                  <article 
+                    key={index} 
+                    className={`group bg-gradient-to-br ${getTypeColor(edu.type)} p-5 rounded-xl border-2 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-[1.02] relative overflow-hidden`}
+                  >
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-white/20 rounded-bl-full"></div>
+                    {getPriorityIndicator(edu.priority)}
+                    
+                    <div className="flex justify-between items-start mb-3">
+                      <h3 className="font-bold text-slate-800 mb-1 leading-tight text-sm group-hover:text-slate-900 transition-colors">
+                        {edu.title}
+                      </h3>
+                      {getStatusBadge(edu.status)}
                     </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </CollapsibleContent>
-      </Collapsible>
-    </Card>
+                    
+                    <p className="font-semibold text-slate-700 mb-3 text-sm">{edu.institution}</p>
+                    
+                    <div className="flex items-center gap-2 text-slate-600 text-xs mb-3">
+                      <Calendar size={12} className="flex-shrink-0" />
+                      <span>{edu.period}</span>
+                    </div>
+                    
+                    {edu.details && (
+                      <div className="bg-white/80 backdrop-blur-sm px-3 py-2 rounded-lg">
+                        <p className="text-xs text-slate-700 font-medium">{edu.details}</p>
+                      </div>
+                    )}
+                  </article>
+                ))}
+              </div>
+            </CardContent>
+          </CollapsibleContent>
+        </Collapsible>
+      </Card>
+    </section>
   );
 };
 

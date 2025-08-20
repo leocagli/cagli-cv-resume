@@ -15,8 +15,9 @@ const ExperienceSection = () => {
       responsibilities: [
         "Facturación y control de rutas de distribución",
         "Profesionalización de procesos logísticos",
-        "Elaboración de reportes ejecutivos",
-        "Supervisión y control de operaciones"
+        "Elaboración de reportes ejecutivos con Excel y Power BI",
+        "Supervisión y control de operaciones",
+        "Análisis de KPIs logísticos y optimización de procesos"
       ],
       reference: "Manuel Mosquera - Jefe de Logística - 1125350522"
     },
@@ -25,9 +26,9 @@ const ExperienceSection = () => {
       company: "Congress Rental",
       period: "Noviembre 2022 - Septiembre 2023",
       responsibilities: [
-        "Gestión de órdenes de pago y retenciones",
+        "Gestión de órdenes de pago y retenciones fiscales",
         "Administración de IVA, IIBB y Ganancias",
-        "Conciliaciones bancarias y contables",
+        "Conciliaciones bancarias y contables con sistemas ERP",
         "Asistencia en auditorías externas"
       ],
       reference: "Andrea Santana - CFO - 1134444990"
@@ -101,52 +102,58 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <Card className="shadow-lg">
-      <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-        <CollapsibleTrigger asChild>
-          <CardHeader className="cursor-pointer hover:bg-slate-50 transition-colors">
-            <CardTitle className="flex items-center justify-between text-2xl text-slate-800">
-              <span className="flex items-center gap-2">
-                <Building2 className="text-blue-600" />
-                Experiencia Laboral
-              </span>
-              {isOpen ? <ChevronUp /> : <ChevronDown />}
-            </CardTitle>
-          </CardHeader>
-        </CollapsibleTrigger>
-        <CollapsibleContent>
-          <CardContent className="space-y-6">
-            {experiences.map((exp, index) => (
-              <div key={index} className="border-l-4 border-blue-600 pl-6 pb-6 last:pb-0 relative">
-                <div className="absolute left-[-8px] top-2 w-4 h-4 bg-blue-600 rounded-full"></div>
-                <div className="bg-white p-4 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
-                  <h3 className="font-bold text-lg text-slate-800 mb-1">{exp.title}</h3>
-                  <p className="font-semibold text-blue-700 mb-2">{exp.company}</p>
-                  <div className="flex items-center gap-2 text-slate-600 text-sm mb-3">
-                    <Calendar size={14} />
-                    <span>{exp.period}</span>
-                  </div>
-                  <ul className="space-y-1 text-sm text-slate-700">
-                    {exp.responsibilities.map((resp, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <span className="text-blue-600 mt-1">•</span>
-                        <span>{resp}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {exp.reference && (
-                    <div className="mt-3 p-2 bg-slate-50 rounded text-xs text-slate-600 flex items-center gap-2">
-                      <Phone size={12} />
-                      <span className="italic">{exp.reference}</span>
-                    </div>
-                  )}
-                </div>
+    <section>
+      <Card className="shadow-lg">
+        <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+          <CollapsibleTrigger asChild>
+            <CardHeader className="cursor-pointer hover:bg-slate-50 transition-colors">
+              <div className="flex items-center justify-between">
+                <h2 className="text-2xl text-slate-800 flex items-center gap-2 font-bold">
+                  <Building2 className="text-blue-600" />
+                  Experiencia Laboral Profesional | Work Experience
+                </h2>
+                {isOpen ? <ChevronUp /> : <ChevronDown />}
               </div>
-            ))}
-          </CardContent>
-        </CollapsibleContent>
-      </Collapsible>
-    </Card>
+              {/* Keywords for ATS */}
+              <div className="hidden">
+                <span>Experiencia Laboral, Work Experience, Controller, Analista Financiero, Financial Analyst, Logística, Supply Chain, Administración, ERP, Excel, Power BI, Supervisor, Team Leadership, Financial Management, Budget Control, Auditoría</span>
+              </div>
+            </CardHeader>
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <CardContent className="space-y-6">
+              {experiences.map((exp, index) => (
+                <article key={index} className="border-l-4 border-blue-600 pl-6 pb-6 last:pb-0 relative">
+                  <div className="absolute left-[-8px] top-2 w-4 h-4 bg-blue-600 rounded-full"></div>
+                  <div className="bg-white p-4 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
+                    <h3 className="font-bold text-lg text-slate-800 mb-1">{exp.title}</h3>
+                    <p className="font-semibold text-blue-700 mb-2">{exp.company}</p>
+                    <div className="flex items-center gap-2 text-slate-600 text-sm mb-3">
+                      <Calendar size={14} />
+                      <span>{exp.period}</span>
+                    </div>
+                    <ul className="space-y-1 text-sm text-slate-700" role="list">
+                      {exp.responsibilities.map((resp, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="text-blue-600 mt-1">•</span>
+                          <span>{resp}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {exp.reference && (
+                      <div className="mt-3 p-2 bg-slate-50 rounded text-xs text-slate-600 flex items-center gap-2">
+                        <Phone size={12} />
+                        <span className="italic">Referencia: {exp.reference}</span>
+                      </div>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </CardContent>
+          </CollapsibleContent>
+        </Collapsible>
+      </Card>
+    </section>
   );
 };
 
