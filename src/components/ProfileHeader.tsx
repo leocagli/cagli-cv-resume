@@ -42,7 +42,7 @@ const ProfileHeader = () => {
                 
                 {/* Keywords for ATS */}
                 <div className="hidden">
-                  <span>Controller, Analista Financiero, Python, SQL, Power BI, Blockchain, Stellar, Avalanche, Excel, Finanzas, Buenos Aires, Argentina, Data Analysis, Financial Controller, Business Intelligence, Cryptocurrency, DeFi, Smart Contracts, Financial Planning, Budget Management, Cost Analysis, Financial Reporting</span>
+                  <span>Controller, Analista Financiero, Python, SQL, Power BI, Blockchain, Stellar, Avalanche, Excel, Finanzas, Buenos Aires, Argentina, Data Analysis, Financial Controller, Business Intelligence, Cryptocurrency, DeFi, Smart Contracts, Financial Planning, Budget Management, Cost Analysis, Financial Reporting, Hackathon Winner, Aleph 2025, Citrea, Midnight, ConstellAr, Blockchain Developer, Innovation, Problem Solving</span>
                 </div>
               </div>
               
@@ -56,10 +56,20 @@ const ProfileHeader = () => {
                 </p>
               </div>
               
-              {/* Hackathon Winner Highlight */}
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-slate-900 px-4 py-2 rounded-xl font-semibold text-sm shadow-lg mb-6">
-                <Trophy size={16} />
-                🏆 Hackathon Winner - Stellar ConstellAr | Blockchain Developer
+              {/* Hackathon Achievements */}
+              <div className="space-y-2 mb-6">
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-slate-900 px-4 py-2 rounded-xl font-semibold text-sm shadow-lg">
+                  <Trophy size={16} />
+                  🏆 Hackathon Winner - Aleph 2025 (Track Citrea)
+                </div>
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-slate-900 px-4 py-2 rounded-xl font-semibold text-sm shadow-lg">
+                  <Trophy size={16} />
+                  🏆 Hackathon Winner - Stellar ConstellAr
+                </div>
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 via-blue-500 to-indigo-500 text-white px-4 py-2 rounded-xl font-semibold text-sm shadow-lg">
+                  <Star size={16} />
+                  🌟 Mención Especial - Hackathon Midnight
+                </div>
               </div>
 
               {/* Core Skills */}
