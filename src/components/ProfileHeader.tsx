@@ -99,7 +99,7 @@ const ProfileHeader = () => {
                     alt="Bitcoin.defi" 
                     className="w-5 h-5 rounded"
                   />
-                  Ver Bitcoin.defi - Mi Proyecto DeFi
+                  bitcoin.defi (servicios web3)
                 </a>
               </div>
 
