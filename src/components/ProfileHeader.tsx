@@ -88,6 +88,21 @@ const ProfileHeader = () => {
                 </div>
               </div>
 
+              {/* Bitcoin.defi Link */}
+              <div className="mb-4">
+                <a 
+                  href="/bitcoin-defi"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                >
+                  <img 
+                    src="/lovable-uploads/ef8778f2-a78c-4887-b7f6-9a1238a486ea.png" 
+                    alt="Bitcoin.defi" 
+                    className="w-5 h-5 rounded"
+                  />
+                  Ver Bitcoin.defi - Mi Proyecto DeFi
+                </a>
+              </div>
+
               {/* Contact Info Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
                 <a 
