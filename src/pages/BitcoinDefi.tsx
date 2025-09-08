@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Mail, Phone, MapPin, ArrowLeft, Calculator, TrendingUp, Shield, Zap } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Mail, Phone, MapPin, ArrowLeft, Calculator, TrendingUp, Shield, Zap, Save, Download } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -7,6 +7,10 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Link } from 'react-router-dom';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Pie } from 'react-chartjs-2';
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const BitcoinDefi = () => {
   const [btcPrice, setBtcPrice] = useState(null);
@@ -18,6 +22,7 @@ const BitcoinDefi = () => {
     silver: 20,
     platinum: 10
   });
+  const [calculationResult, setCalculationResult] = useState('');
 
   // Fetch prices from CoinGecko
   const loadPrices = async () => {
@@ -44,6 +49,53 @@ const BitcoinDefi = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Load preset from localStorage on component mount
+  useEffect(() => {
+    const savedPreset = localStorage.getItem('bitcoin_defi_preset');
+    if (savedPreset) {
+      try {
+        const preset = JSON.parse(savedPreset);
+        if (preset.pct) {
+          setAllocations({
+            btc: preset.pct.btc || 40,
+            gold: preset.pct.gold || 30,
+            silver: preset.pct.silver || 20,
+            platinum: preset.pct.platinum || 10
+          });
+        }
+        if (preset.capital) {
+          setCapital(preset.capital);
+        }
+      } catch (e) {
+        console.error('Error loading preset:', e);
+      }
+    }
+  }, []);
+
+  // Normalize allocations to sum 100%
+  const normalizeAllocations = (newAllocations) => {
+    const values = [newAllocations.btc, newAllocations.gold, newAllocations.silver, newAllocations.platinum];
+    const sum = values.reduce((a, b) => a + b, 0);
+    
+    if (sum === 100) return newAllocations;
+    
+    const target = 100;
+    const scaled = values.map(v => Math.max(0, (v / sum) * target));
+    
+    return {
+      btc: Math.round(scaled[0]),
+      gold: Math.round(scaled[1]),
+      silver: Math.round(scaled[2]),
+      platinum: Math.round(scaled[3])
+    };
+  };
+
+  const handleAllocationChange = (key, value) => {
+    const newAllocations = { ...allocations, [key]: value };
+    const normalized = normalizeAllocations(newAllocations);
+    setAllocations(normalized);
+  };
+
   const formatUSD = (value) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
@@ -63,6 +115,67 @@ const BitcoinDefi = () => {
     const paxgUnits = paxgPrice ? results.gold / paxgPrice.usd : 0;
 
     return { results, btcUnits, paxgUnits };
+  };
+
+  const performCalculation = () => {
+    const { results, btcUnits, paxgUnits } = calculateAllocation();
+    
+    const output = [];
+    output.push(`Capital: ${formatUSD(capital)}`);
+    output.push('---');
+    output.push(`BTC: ${btcUnits.toFixed(6)} BTC  (~${formatUSD(results.btc)})`);
+    output.push(`PAXG: ${paxgUnits.toFixed(6)} PAXG  (~${formatUSD(results.gold)})`);
+    output.push(`Plata (XAG): ~${formatUSD(results.silver)} asignados`);
+    output.push(`Platino (XPT): ~${formatUSD(results.platinum)} asignados`);
+    output.push('---');
+    output.push('Nota: unidades de Plata/Platino requieren precio de referencia del broker/DEX elegido.');
+    
+    setCalculationResult(output.join('\n'));
+  };
+
+  const savePreset = () => {
+    const preset = {
+      pct: {
+        btc: allocations.btc,
+        gold: allocations.gold,
+        silver: allocations.silver,
+        platinum: allocations.platinum
+      },
+      capital: capital
+    };
+    localStorage.setItem('bitcoin_defi_preset', JSON.stringify(preset));
+    alert('Preset guardado localmente.');
+  };
+
+  // Chart.js data
+  const chartData = {
+    labels: ['BTC', 'Oro (PAXG)', 'Plata', 'Platino'],
+    datasets: [{
+      data: [allocations.btc, allocations.gold, allocations.silver, allocations.platinum],
+      backgroundColor: [
+        '#F7931A', // Bitcoin orange
+        '#FFD700', // Gold
+        '#C0C0C0', // Silver
+        '#E5E4E2'  // Platinum
+      ],
+      borderColor: '#1e40af',
+      borderWidth: 2
+    }]
+  };
+
+  const chartOptions = {
+    plugins: {
+      legend: {
+        position: 'bottom' as const,
+        labels: {
+          color: '#cfe4ff',
+          font: {
+            size: 12
+          }
+        }
+      }
+    },
+    maintainAspectRatio: true
   };
 
   const { results, btcUnits, paxgUnits } = calculateAllocation();
@@ -211,9 +324,9 @@ const BitcoinDefi = () => {
                   <Label className="text-white mb-2 block">Bitcoin: {allocations.btc}%</Label>
                   <Slider
                     value={[allocations.btc]}
-                    onValueChange={(value) => setAllocations({...allocations, btc: value[0]})}
+                    onValueChange={(value) => handleAllocationChange('btc', value[0])}
                     max={100}
-                    step={5}
+                    step={1}
                     className="w-full"
                   />
                 </div>
@@ -221,9 +334,9 @@ const BitcoinDefi = () => {
                   <Label className="text-white mb-2 block">Oro (PAXG): {allocations.gold}%</Label>
                   <Slider
                     value={[allocations.gold]}
-                    onValueChange={(value) => setAllocations({...allocations, gold: value[0]})}
+                    onValueChange={(value) => handleAllocationChange('gold', value[0])}
                     max={100}
-                    step={5}
+                    step={1}
                     className="w-full"
                   />
                 </div>
@@ -231,9 +344,9 @@ const BitcoinDefi = () => {
                   <Label className="text-white mb-2 block">Plata: {allocations.silver}%</Label>
                   <Slider
                     value={[allocations.silver]}
-                    onValueChange={(value) => setAllocations({...allocations, silver: value[0]})}
+                    onValueChange={(value) => handleAllocationChange('silver', value[0])}
                     max={100}
-                    step={5}
+                    step={1}
                     className="w-full"
                   />
                 </div>
@@ -241,18 +354,46 @@ const BitcoinDefi = () => {
                   <Label className="text-white mb-2 block">Platino: {allocations.platinum}%</Label>
                   <Slider
                     value={[allocations.platinum]}
-                    onValueChange={(value) => setAllocations({...allocations, platinum: value[0]})}
+                    onValueChange={(value) => handleAllocationChange('platinum', value[0])}
                     max={100}
-                    step={5}
+                    step={1}
                     className="w-full"
                   />
+                </div>
+
+                {/* Control Buttons */}
+                <div className="flex gap-4 pt-4">
+                  <Button 
+                    onClick={performCalculation}
+                    className="bg-blue-600 hover:bg-blue-500 text-white flex-1"
+                  >
+                    <Calculator size={16} className="mr-2" />
+                    Calcular
+                  </Button>
+                  <Button 
+                    onClick={savePreset}
+                    variant="outline"
+                    className="border-blue-600 text-blue-300 hover:bg-blue-600 hover:text-white"
+                  >
+                    <Save size={16} className="mr-2" />
+                    Guardar
+                  </Button>
                 </div>
               </div>
             </div>
 
             {/* Results Section */}
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-white mb-4">Asignación Calculada</h3>
+              <h3 className="text-xl font-semibold text-white mb-4">Visualización del Portafolio</h3>
+              
+              {/* Pie Chart */}
+              <div className="bg-blue-900/50 p-4 rounded-lg mb-4">
+                <div className="w-full max-w-sm mx-auto">
+                  <Pie data={chartData} options={chartOptions} />
+                </div>
+              </div>
+
+              {/* Quick Allocation Display */}
               <div className="space-y-3">
                 <div className="bg-blue-900/50 p-4 rounded-lg">
                   <div className="flex justify-between items-center">
@@ -289,6 +430,16 @@ const BitcoinDefi = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Calculation Result */}
+              {calculationResult && (
+                <div className="bg-blue-900/50 p-4 rounded-lg mt-4">
+                  <h4 className="text-white font-semibold mb-2">Resultado del Cálculo:</h4>
+                  <pre className="text-blue-200 text-sm whitespace-pre-wrap font-mono">
+                    {calculationResult}
+                  </pre>
+                </div>
+              )}
             </div>
           </div>
         </Card>
