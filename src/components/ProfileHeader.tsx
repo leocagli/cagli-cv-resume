@@ -52,24 +52,8 @@ const ProfileHeader = () => {
                 <p className="text-slate-600 text-sm leading-relaxed">
                   Controller Financiero con expertise en análisis de datos y desarrollo blockchain. 
                   Especialista en Python, SQL y Power BI con experiencia en ecosistemas Stellar y Avalanche. 
-                  Ganador de hackathons internacionales y embajador de tecnologías emergentes.
+                  <span className="font-semibold text-orange-600">🏆 Ganador de x2 hackathons internacionales</span> y embajador de tecnologías emergentes.
                 </p>
-              </div>
-              
-              {/* Hackathon Achievements */}
-              <div className="space-y-1.5 mb-3">
-                <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-slate-900 px-3 py-1 rounded-lg font-semibold text-xs shadow-md">
-                  <Trophy size={12} />
-                  🏆 Hackathon Winner - Aleph 2025 (Track Citrea)
-                </div>
-                <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-slate-900 px-3 py-1 rounded-lg font-semibold text-xs shadow-md">
-                  <Trophy size={12} />
-                  🏆 Hackathon Winner - Stellar ConstellAr
-                </div>
-                <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-purple-500 via-blue-500 to-indigo-500 text-white px-3 py-1 rounded-lg font-semibold text-xs shadow-md">
-                  <Star size={12} />
-                  🌟 Mención Especial - Hackathon Midnight
-                </div>
               </div>
 
               {/* Core Skills */}

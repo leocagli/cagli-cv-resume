@@ -1,13 +1,22 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ChevronDown, ChevronUp, Trophy, Star, Award, Users } from 'lucide-react';
 
+interface Activity {
+  name: string;
+  category: string;
+  isWinner?: boolean;
+  isSpecial?: boolean;
+}
+
 const ActivitiesSection = () => {
   const [isOpen, setIsOpen] = useState(true);
 
-  const activities = [
+  const activities: Activity[] = [
+    { name: "🏆 Aleph 2025 (Track Citrea) - GANADOR", category: "blockchain", isWinner: true },
+    { name: "🏆 Stellar ConstellAr - GANADOR (Mejor Proyecto con ReFinance)", category: "blockchain", isWinner: true },
+    { name: "🌟 Midnight Hackathon - Mención Especial", category: "blockchain", isSpecial: true },
     { name: "Pitch Competition - Cardano", category: "blockchain" },
     { name: "Expo EFI Argentina - CEA", category: "finance" },
     { name: "Markets Experience - Rankia", category: "finance" },
@@ -21,17 +30,16 @@ const ActivitiesSection = () => {
     { name: "Tech Builders - Rather Labs", category: "blockchain" },
     { name: "Copa América Solana Hackathon", category: "blockchain" },
     { name: "Nerdconf Polkadot Hackathon", category: "blockchain" },
-    { name: "Stellar ConstellAr Hackathon - Ganador con ReFinance (Mejor Proyecto)", category: "blockchain" },
     { name: "Hackathon Stellar - Becado", category: "blockchain" }
   ];
 
-  const memberships = [
+  const memberships: Activity[] = [
     { name: "Club Cripto UCEMA", category: "membership" },
     { name: "Club de Finanzas UBA", category: "membership" },
     { name: "Club de Finanzas UCEMA", category: "membership" }
   ];
 
-  const ambassadorships = [
+  const ambassadorships: Activity[] = [
     { name: "Embajador y Speaker - Cultura C3", category: "ambassador" },
     { name: "Embajador y Speaker - Bitcoin Argentina", category: "ambassador" },
     { name: "Embajador - Stellar", category: "ambassador" }
@@ -50,7 +58,10 @@ const ActivitiesSection = () => {
     }
   };
 
-  const getCategoryColor = (category: string) => {
+  const getCategoryColor = (category: string, isWinner?: boolean, isSpecial?: boolean) => {
+    if (isWinner) return 'from-yellow-400 via-orange-400 to-red-400 border-orange-500 hover:from-yellow-500 hover:via-orange-500 hover:to-red-500';
+    if (isSpecial) return 'from-purple-400 via-blue-400 to-indigo-400 border-purple-500 hover:from-purple-500 hover:via-blue-500 hover:to-indigo-500';
+    
     switch (category) {
       case 'blockchain': return 'from-purple-50 to-purple-100 border-purple-200 hover:from-purple-100 hover:to-purple-200';
       case 'finance': return 'from-green-50 to-green-100 border-green-200 hover:from-green-100 hover:to-green-200';
@@ -67,7 +78,7 @@ const ActivitiesSection = () => {
     }
     acc[activity.category].push(activity);
     return acc;
-  }, {} as Record<string, typeof allActivities>);
+  }, {} as Record<string, Activity[]>);
 
   const categoryLabels = {
     blockchain: 'Blockchain & Crypto',
@@ -112,12 +123,12 @@ const ActivitiesSection = () => {
                     {categoryActivities.map((activity, index) => (
                       <div 
                         key={index} 
-                        className={`group flex items-center gap-2 bg-gradient-to-r ${getCategoryColor(category)} p-2 rounded-lg border-2 transition-all duration-300 hover:scale-105 hover:shadow-md cursor-pointer`}
+                        className={`group flex items-center gap-2 bg-gradient-to-r ${getCategoryColor(category, activity.isWinner, activity.isSpecial)} p-2 rounded-lg border-2 transition-all duration-300 hover:scale-105 hover:shadow-md cursor-pointer ${activity.isWinner || activity.isSpecial ? 'shadow-lg' : ''}`}
                       >
                         <div className="flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
-                          {getCategoryIcon(category)}
+                          {activity.isWinner ? <Trophy className="text-slate-900" size={14} /> : activity.isSpecial ? <Star className="text-white" size={14} /> : getCategoryIcon(category)}
                         </div>
-                        <span className="text-xs font-medium text-slate-800 group-hover:text-slate-900 transition-colors leading-tight">
+                        <span className={`text-xs font-medium transition-colors leading-tight ${activity.isWinner ? 'text-slate-900 font-bold' : activity.isSpecial ? 'text-white font-bold' : 'text-slate-800 group-hover:text-slate-900'}`}>
                           {activity.name}
                         </span>
                       </div>
