@@ -98,26 +98,26 @@ const ActivitiesSection = () => {
         </CollapsibleTrigger>
         <CollapsibleContent>
           <CardContent className="pt-0">
-            <div className="space-y-6">
+            <div className="space-y-3">
               {Object.entries(groupedActivities).map(([category, categoryActivities]) => (
-                <div key={category} className="space-y-3">
-                  <h3 className="font-semibold text-slate-700 text-lg flex items-center gap-2 border-b border-slate-200 pb-2">
+                <div key={category} className="space-y-1.5">
+                  <h3 className="font-semibold text-slate-700 text-sm flex items-center gap-1.5 border-b border-slate-200 pb-1">
                     {getCategoryIcon(category)}
                     {categoryLabels[category as keyof typeof categoryLabels]}
-                    <span className="text-sm font-normal text-slate-500 ml-auto">
+                    <span className="text-xs font-normal text-slate-500 ml-auto">
                       {categoryActivities.length} {categoryActivities.length === 1 ? 'evento' : 'eventos'}
                     </span>
                   </h3>
-                  <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+                  <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
                     {categoryActivities.map((activity, index) => (
                       <div 
                         key={index} 
-                        className={`group flex items-center gap-3 bg-gradient-to-r ${getCategoryColor(category)} p-4 rounded-xl border-2 transition-all duration-300 hover:scale-105 hover:shadow-md cursor-pointer`}
+                        className={`group flex items-center gap-2 bg-gradient-to-r ${getCategoryColor(category)} p-2 rounded-lg border-2 transition-all duration-300 hover:scale-105 hover:shadow-md cursor-pointer`}
                       >
                         <div className="flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
                           {getCategoryIcon(category)}
                         </div>
-                        <span className="text-sm font-medium text-slate-800 group-hover:text-slate-900 transition-colors leading-tight">
+                        <span className="text-xs font-medium text-slate-800 group-hover:text-slate-900 transition-colors leading-tight">
                           {activity.name}
                         </span>
                       </div>

@@ -48,15 +48,15 @@ const SkillsSection = () => {
             </CardHeader>
           </CollapsibleTrigger>
           <CollapsibleContent>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-3">
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
-                  <Code className="text-blue-600" size={20} />
+                <h3 className="text-base font-semibold text-slate-800 mb-2 flex items-center gap-2">
+                  <Code className="text-blue-600" size={16} />
                   Competencias Técnicas | Technical Skills
                 </h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1.5">
                   {technicalSkills.map((skill, index) => (
-                    <div key={index} className="bg-blue-50 px-3 py-2 rounded-lg text-sm text-blue-800 font-medium hover:bg-blue-100 transition-colors">
+                    <div key={index} className="bg-blue-50 px-2 py-1 rounded-lg text-xs text-blue-800 font-medium hover:bg-blue-100 transition-colors">
                       {skill}
                     </div>
                   ))}
@@ -64,13 +64,13 @@ const SkillsSection = () => {
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
-                  <Users className="text-green-600" size={20} />
+                <h3 className="text-base font-semibold text-slate-800 mb-2 flex items-center gap-2">
+                  <Users className="text-green-600" size={16} />
                   Habilidades Blandas | Soft Skills
                 </h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1.5">
                   {softSkills.map((skill, index) => (
-                    <div key={index} className="bg-green-50 px-3 py-2 rounded-lg text-sm text-green-800 font-medium hover:bg-green-100 transition-colors">
+                    <div key={index} className="bg-green-50 px-2 py-1 rounded-lg text-xs text-green-800 font-medium hover:bg-green-100 transition-colors">
                       {skill}
                     </div>
                   ))}
@@ -78,13 +78,13 @@ const SkillsSection = () => {
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
-                  <Award className="text-orange-600" size={20} />
+                <h3 className="text-base font-semibold text-slate-800 mb-2 flex items-center gap-2">
+                  <Award className="text-orange-600" size={16} />
                   Certificaciones y Logros | Certifications & Achievements
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1.5">
                   {certifications.map((cert, index) => (
-                    <div key={index} className="bg-orange-50 px-3 py-2 rounded-lg text-sm text-orange-800 font-medium hover:bg-orange-100 transition-colors">
+                    <div key={index} className="bg-orange-50 px-2 py-1 rounded-lg text-xs text-orange-800 font-medium hover:bg-orange-100 transition-colors">
                       {cert}
                     </div>
                   ))}

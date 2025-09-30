@@ -121,28 +121,28 @@ const ExperienceSection = () => {
             </CardHeader>
           </CollapsibleTrigger>
           <CollapsibleContent>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-3">
               {experiences.map((exp, index) => (
-                <article key={index} className="border-l-4 border-blue-600 pl-6 pb-6 last:pb-0 relative">
-                  <div className="absolute left-[-8px] top-2 w-4 h-4 bg-blue-600 rounded-full"></div>
-                  <div className="bg-white p-4 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
-                    <h3 className="font-bold text-lg text-slate-800 mb-1">{exp.title}</h3>
-                    <p className="font-semibold text-blue-700 mb-2">{exp.company}</p>
-                    <div className="flex items-center gap-2 text-slate-600 text-sm mb-3">
-                      <Calendar size={14} />
+                <article key={index} className="border-l-4 border-blue-600 pl-4 pb-3 last:pb-0 relative">
+                  <div className="absolute left-[-8px] top-1 w-4 h-4 bg-blue-600 rounded-full"></div>
+                  <div className="bg-white p-3 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
+                    <h3 className="font-bold text-base text-slate-800 mb-0.5">{exp.title}</h3>
+                    <p className="font-semibold text-blue-700 text-sm mb-1">{exp.company}</p>
+                    <div className="flex items-center gap-1.5 text-slate-600 text-xs mb-2">
+                      <Calendar size={12} />
                       <span>{exp.period}</span>
                     </div>
-                    <ul className="space-y-1 text-sm text-slate-700" role="list">
+                    <ul className="space-y-0.5 text-xs text-slate-700" role="list">
                       {exp.responsibilities.map((resp, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <span className="text-blue-600 mt-1">•</span>
+                        <li key={idx} className="flex items-start gap-1.5">
+                          <span className="text-blue-600 mt-0.5">•</span>
                           <span>{resp}</span>
                         </li>
                       ))}
                     </ul>
                     {exp.reference && (
-                      <div className="mt-3 p-2 bg-slate-50 rounded text-xs text-slate-600 flex items-center gap-2">
-                        <Phone size={12} />
+                      <div className="mt-2 p-1.5 bg-slate-50 rounded text-[10px] text-slate-600 flex items-center gap-1.5">
+                        <Phone size={10} />
                         <span className="italic">Referencia: {exp.reference}</span>
                       </div>
                     )}

@@ -210,32 +210,32 @@ const EducationSection = () => {
           </CollapsibleTrigger>
           <CollapsibleContent>
             <CardContent className="pt-0">
-              <div className="grid gap-6 md:grid-cols-2">
+              <div className="grid gap-3 md:grid-cols-2">
                 {education.map((edu, index) => (
                   <article 
                     key={index} 
-                    className={`group bg-gradient-to-br ${getTypeColor(edu.type)} p-5 rounded-xl border-2 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-[1.02] relative overflow-hidden`}
+                    className={`group bg-gradient-to-br ${getTypeColor(edu.type)} p-3 rounded-lg border-2 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-[1.02] relative overflow-hidden`}
                   >
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-white/20 rounded-bl-full"></div>
+                    <div className="absolute top-0 right-0 w-12 h-12 bg-white/20 rounded-bl-full"></div>
                     {getPriorityIndicator(edu.priority)}
                     
-                    <div className="flex justify-between items-start mb-3">
-                      <h3 className="font-bold text-slate-800 mb-1 leading-tight text-sm group-hover:text-slate-900 transition-colors">
+                    <div className="flex justify-between items-start mb-1.5">
+                      <h3 className="font-bold text-slate-800 mb-0.5 leading-tight text-xs group-hover:text-slate-900 transition-colors">
                         {edu.title}
                       </h3>
                       {getStatusBadge(edu.status)}
                     </div>
                     
-                    <p className="font-semibold text-slate-700 mb-3 text-sm">{edu.institution}</p>
+                    <p className="font-semibold text-slate-700 mb-1.5 text-xs">{edu.institution}</p>
                     
-                    <div className="flex items-center gap-2 text-slate-600 text-xs mb-3">
-                      <Calendar size={12} className="flex-shrink-0" />
+                    <div className="flex items-center gap-1.5 text-slate-600 text-[10px] mb-1.5">
+                      <Calendar size={10} className="flex-shrink-0" />
                       <span>{edu.period}</span>
                     </div>
                     
                     {edu.details && (
-                      <div className="bg-white/80 backdrop-blur-sm px-3 py-2 rounded-lg">
-                        <p className="text-xs text-slate-700 font-medium">{edu.details}</p>
+                      <div className="bg-white/80 backdrop-blur-sm px-2 py-1 rounded-lg">
+                        <p className="text-[10px] text-slate-700 font-medium">{edu.details}</p>
                       </div>
                     )}
                   </article>
