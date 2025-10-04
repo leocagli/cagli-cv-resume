@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { ChevronDown, ChevronUp, Trophy, Star, Award, Users } from 'lucide-react';
+import { ChevronDown, ChevronUp, Trophy, Star, Award, Users, Rocket, Mic, Calendar } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 interface Activity {
   name: string;
@@ -45,7 +47,18 @@ const ActivitiesSection = () => {
     { name: "Embajador - Stellar", category: "ambassador" }
   ];
 
-  const allActivities = [...activities, ...memberships, ...ambassadorships];
+  const speakerActivities: Activity[] = [
+    { name: "Taller Finanzas Descentralizadas - DescentralizAR - ONG Bitcoin Argentina", category: "speaker" },
+    { name: "Debate - El poder de descentralizar - DescentralizAR - ONG Bitcoin Argentina", category: "speaker" }
+  ];
+
+  const eventAttendance: Activity[] = [
+    { name: "Meridian Conference - Rio de Janeiro", category: "eventos" },
+    { name: "Rio Construção Summit 2025 - Rio de Janeiro", category: "eventos" },
+    { name: "Nerdearla - 2025", category: "eventos" }
+  ];
+
+  const allActivities = [...activities, ...memberships, ...ambassadorships, ...speakerActivities, ...eventAttendance];
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
@@ -54,6 +67,8 @@ const ActivitiesSection = () => {
       case 'tech': return <Users className="text-blue-600" size={14} />;
       case 'membership': return <Users className="text-indigo-600" size={14} />;
       case 'ambassador': return <Trophy className="text-orange-600" size={14} />;
+      case 'speaker': return <Mic className="text-amber-600" size={14} />;
+      case 'eventos': return <Calendar className="text-cyan-600" size={14} />;
       default: return <Trophy className="text-yellow-600" size={14} />;
     }
   };
@@ -68,6 +83,8 @@ const ActivitiesSection = () => {
       case 'tech': return 'from-blue-50 to-blue-100 border-blue-200 hover:from-blue-100 hover:to-blue-200';
       case 'membership': return 'from-indigo-50 to-indigo-100 border-indigo-200 hover:from-indigo-100 hover:to-indigo-200';
       case 'ambassador': return 'from-orange-50 to-orange-100 border-orange-200 hover:from-orange-100 hover:to-orange-200';
+      case 'speaker': return 'from-amber-50 to-amber-100 border-amber-200 hover:from-amber-100 hover:to-amber-200';
+      case 'eventos': return 'from-cyan-50 to-cyan-100 border-cyan-200 hover:from-cyan-100 hover:to-cyan-200';
       default: return 'from-yellow-50 to-yellow-100 border-yellow-200 hover:from-yellow-100 hover:to-yellow-200';
     }
   };
@@ -85,7 +102,9 @@ const ActivitiesSection = () => {
     finance: 'Finanzas',
     tech: 'Tecnología',
     membership: 'Membresías',
-    ambassador: 'Embajador & Speaker'
+    ambassador: 'Embajador & Speaker',
+    speaker: 'Speaker & Presentaciones',
+    eventos: 'Asistencia a Eventos'
   };
 
   return (
@@ -109,6 +128,34 @@ const ActivitiesSection = () => {
         </CollapsibleTrigger>
         <CollapsibleContent>
           <CardContent className="pt-0">
+            {/* Bitcoin.Defi Project Link */}
+            <Link to="/bitcoin-defi">
+              <div className="mb-6 p-6 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 rounded-xl border-2 border-blue-400 hover:from-blue-500 hover:via-blue-400 hover:to-blue-500 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer group">
+                <div className="flex items-center gap-4">
+                  <div className="flex-shrink-0">
+                    <img 
+                      src="/lovable-uploads/ef8778f2-a78c-4887-b7f6-9a1238a486ea.png" 
+                      alt="Bitcoin.defi Logo" 
+                      className="w-16 h-16 rounded-lg shadow-lg group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <Rocket className="text-white" size={20} />
+                      <h3 className="text-xl font-bold text-white">Bitcoin.Defi</h3>
+                    </div>
+                    <p className="text-blue-100 text-sm">Click aquí para ver proyectos Web3 y DeFi</p>
+                  </div>
+                  <Button 
+                    className="bg-white text-blue-600 hover:bg-blue-50 font-semibold"
+                    size="sm"
+                  >
+                    Ver Portfolio →
+                  </Button>
+                </div>
+              </div>
+            </Link>
+
             <div className="space-y-3">
               {Object.entries(groupedActivities).map(([category, categoryActivities]) => (
                 <div key={category} className="space-y-1.5">
