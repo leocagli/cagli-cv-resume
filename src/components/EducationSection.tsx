@@ -26,12 +26,20 @@ const EducationSection = () => {
       priority: 2
     },
     {
+      title: "Bootcamp Avalanche 2025",
+      institution: "UTN.BA",
+      period: "Octubre 2025 - Actualidad",
+      status: "En curso",
+      type: "blockchain",
+      priority: 3
+    },
+    {
       title: "Crecimiento - AWS Startups",
       institution: "Founders School",
       period: "Enero 2025 - Marzo 2025",
       status: "Completado",
       type: "management",
-      priority: 3
+      priority: 4
     },
     {
       title: "Bootcamp Avalanche",
@@ -39,7 +47,7 @@ const EducationSection = () => {
       period: "Julio - Agosto 2024",
       status: "Completado",
       type: "blockchain",
-      priority: 4
+      priority: 5
     },
     {
       title: "Ethereum Developer Pack",
@@ -47,7 +55,7 @@ const EducationSection = () => {
       period: "Septiembre 2024 - Octubre 2024",
       status: "Completado",
       type: "blockchain",
-      priority: 5
+      priority: 6
     },
     {
       title: "Onchain Builder Lab",
@@ -55,7 +63,7 @@ const EducationSection = () => {
       period: "Septiembre 2024 - Diciembre 2024",
       status: "Completado",
       type: "blockchain",
-      priority: 6
+      priority: 7
     },
     {
       title: "Back Office para Mercado de Capitales",
@@ -63,7 +71,7 @@ const EducationSection = () => {
       period: "Agosto 2024 - Octubre 2024",
       status: "Completado",
       type: "finance",
-      priority: 7
+      priority: 8
     },
     {
       title: "Excel Avanzado - Power BI - SQL Inicial",
@@ -71,7 +79,7 @@ const EducationSection = () => {
       period: "Septiembre 2023 - Diciembre 2023",
       status: "Completado",
       type: "tech",
-      priority: 8
+      priority: 9
     },
     {
       title: "Tango Gestión - Contabilidad",
@@ -79,7 +87,7 @@ const EducationSection = () => {
       period: "Agosto 2023 - Octubre 2023",
       status: "Completado",
       type: "tech",
-      priority: 9
+      priority: 10
     },
     {
       title: "Productividad con CHAT GPT-4",
@@ -87,7 +95,7 @@ const EducationSection = () => {
       period: "Junio 2023 - Agosto 2023",
       status: "Completado",
       type: "tech",
-      priority: 10
+      priority: 11
     },
     {
       title: "Big Data - Codo a Codo",
@@ -95,7 +103,7 @@ const EducationSection = () => {
       period: "Marzo 2023 - Agosto 2023",
       status: "Completado",
       type: "tech",
-      priority: 11
+      priority: 12
     },
     {
       title: "Python Inicial",
@@ -103,7 +111,7 @@ const EducationSection = () => {
       period: "Febrero 2022 - Abril 2022",
       status: "Completado",
       type: "tech",
-      priority: 12
+      priority: 13
     },
     {
       title: "Diplomatura en Marketing Político",
@@ -111,7 +119,7 @@ const EducationSection = () => {
       period: "Marzo 2020 - Agosto 2020",
       status: "Completado",
       type: "management",
-      priority: 13
+      priority: 14
     },
     {
       title: "Experto Universitario en Mercado de Capitales",
@@ -119,7 +127,7 @@ const EducationSection = () => {
       period: "Septiembre 2019 - Agosto 2020",
       status: "Completado",
       type: "finance",
-      priority: 14
+      priority: 15
     },
     {
       title: "Administración de Empresas Petroleras",
@@ -127,7 +135,7 @@ const EducationSection = () => {
       period: "Marzo 2016 - Diciembre 2016",
       status: "Completado",
       type: "management",
-      priority: 15
+      priority: 16
     },
     {
       title: "Herramientas Administrativas - Excel Avanzado",
@@ -135,7 +143,7 @@ const EducationSection = () => {
       period: "Agosto 2012 - Diciembre 2012",
       status: "Completado",
       type: "tech",
-      priority: 16
+      priority: 17
     },
     {
       title: "Tango Gestión",
@@ -143,7 +151,7 @@ const EducationSection = () => {
       period: "Marzo 2012 - Junio 2012",
       status: "Completado",
       type: "tech",
-      priority: 17
+      priority: 18
     }
   ];
 
