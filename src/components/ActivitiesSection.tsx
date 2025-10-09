@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { ChevronDown, ChevronUp, Trophy, Star, Award, Users, Rocket, Mic, Calendar } from 'lucide-react';
+import { ChevronDown, ChevronUp, Trophy, Star, Award, Users, Rocket, Mic, Calendar, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
@@ -19,6 +19,7 @@ const ActivitiesSection = () => {
     { name: "🏆 Aleph 2025 (Track Citrea) - GANADOR", category: "blockchain", isWinner: true },
     { name: "🏆 Stellar ConstellAr - GANADOR (Mejor Proyecto con ReFinance)", category: "blockchain", isWinner: true },
     { name: "🌟 Midnight Hackathon - Mención Especial", category: "blockchain", isSpecial: true },
+    { name: "Meridian 2025 - Rio de Janeiro (5to lugar)", category: "blockchain", isSpecial: true },
     { name: "Pitch Competition - Cardano", category: "blockchain" },
     { name: "Expo EFI Argentina - CEA", category: "finance" },
     { name: "Markets Experience - Rankia", category: "finance" },
@@ -53,12 +54,16 @@ const ActivitiesSection = () => {
   ];
 
   const eventAttendance: Activity[] = [
-    { name: "Meridian Conference - Rio de Janeiro", category: "eventos" },
-    { name: "Rio Construção Summit 2025 - Rio de Janeiro", category: "eventos" },
+    { name: "Meridian 2025 - Rio de Janeiro", category: "eventos" },
+    { name: "Rio Construction Summit 2025 - Rio de Janeiro", category: "eventos" },
     { name: "Nerdearla - 2025", category: "eventos" }
   ];
 
-  const allActivities = [...activities, ...memberships, ...ambassadorships, ...speakerActivities, ...eventAttendance];
+  const courses: Activity[] = [
+    { name: "Bootcamp Avalanche 2025 - 10/25 a actualidad", category: "cursos" }
+  ];
+
+  const allActivities = [...activities, ...memberships, ...ambassadorships, ...speakerActivities, ...eventAttendance, ...courses];
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
@@ -69,6 +74,7 @@ const ActivitiesSection = () => {
       case 'ambassador': return <Trophy className="text-orange-600" size={14} />;
       case 'speaker': return <Mic className="text-amber-600" size={14} />;
       case 'eventos': return <Calendar className="text-cyan-600" size={14} />;
+      case 'cursos': return <GraduationCap className="text-emerald-600" size={14} />;
       default: return <Trophy className="text-yellow-600" size={14} />;
     }
   };
@@ -85,6 +91,7 @@ const ActivitiesSection = () => {
       case 'ambassador': return 'from-orange-50 to-orange-100 border-orange-200 hover:from-orange-100 hover:to-orange-200';
       case 'speaker': return 'from-amber-50 to-amber-100 border-amber-200 hover:from-amber-100 hover:to-amber-200';
       case 'eventos': return 'from-cyan-50 to-cyan-100 border-cyan-200 hover:from-cyan-100 hover:to-cyan-200';
+      case 'cursos': return 'from-emerald-50 to-emerald-100 border-emerald-200 hover:from-emerald-100 hover:to-emerald-200';
       default: return 'from-yellow-50 to-yellow-100 border-yellow-200 hover:from-yellow-100 hover:to-yellow-200';
     }
   };
@@ -104,7 +111,8 @@ const ActivitiesSection = () => {
     membership: 'Membresías',
     ambassador: 'Embajador & Speaker',
     speaker: 'Speaker & Presentaciones',
-    eventos: 'Asistencia a Eventos'
+    eventos: 'Asistencia a Eventos',
+    cursos: 'Cursos & Bootcamps'
   };
 
   return (
