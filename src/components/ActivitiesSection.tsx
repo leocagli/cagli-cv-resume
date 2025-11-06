@@ -19,6 +19,7 @@ const ActivitiesSection = () => {
     { name: "🏆 Aleph 2025 (Track Citrea) - GANADOR", category: "blockchain", isWinner: true },
     { name: "🏆 Stellar ConstellAr - GANADOR (Mejor Proyecto con ReFinance)", category: "blockchain", isWinner: true },
     { name: "🌟 Midnight Hackathon - Mención Especial", category: "blockchain", isSpecial: true },
+    { name: "🌟 Latin hack - Nerdconf - Mención Especial", category: "blockchain", isSpecial: true },
     { name: "Meridian 2025 - Rio de Janeiro (5to lugar)", category: "blockchain", isSpecial: true },
     { name: "Pitch Competition - Cardano", category: "blockchain" },
     { name: "Expo EFI Argentina - CEA", category: "finance" },

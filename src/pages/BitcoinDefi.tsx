@@ -36,6 +36,14 @@ const BitcoinDefi = () => {
       technologies: ["Midnight", "Privacy", "Zero-Knowledge"],
       status: "live" as const,
       category: "Hackathon"
+    },
+    {
+      title: "Latin hack - Nerdconf",
+      description: "🌟 Mención Especial. Tralala Contracts: Aplicación para crear contratos inteligentes de forma accesible tanto para adultos como para niños.",
+      image: "/lovable-uploads/tralala-logo.jpeg",
+      technologies: ["Smart Contracts", "Web3", "Education"],
+      status: "live" as const,
+      category: "Hackathon"
     }
   ];
 
