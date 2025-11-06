@@ -12,15 +12,15 @@ const CVSummary = () => {
         <div className="grid grid-cols-2 gap-2 text-sm text-slate-600">
           <div className="flex items-center gap-2">
             <Mail size={14} />
-            <span>enzocagliero@gmail.com</span>
+            <span>leocagli@gmail.com</span>
           </div>
           <div className="flex items-center gap-2">
             <Phone size={14} />
-            <span>+54 911 5891-3036</span>
+            <span>+54 387 511 0520</span>
           </div>
           <div className="flex items-center gap-2">
             <Linkedin size={14} />
-            <span>linkedin.com/in/enzo-cagliero</span>
+            <span>linkedin.com/in/leocagli</span>
           </div>
           <div className="flex items-center gap-2">
             <MapPin size={14} />

@@ -50,9 +50,9 @@ const ProfileHeader = () => {
               <div className="mb-3 text-left">
                 <h2 className="text-base font-semibold text-slate-700 mb-1.5">Resumen Profesional</h2>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  14+ años en mercados de capitales y criptomonedas con perfil híbrido en finanzas, gestión y tecnología. 
-                  Fundador de <span className="font-semibold text-blue-600">bitcoin.defi</span>: integración de estrategias DeFi con activos tokenizados, educación financiera, asesoría en Web3 y programación de smart contracts. 
-                  Embajador de tecnologías blockchain emergentes y especialista en optimización de procesos financieros.
+                  +13 años de experiencia en mercados de capitales y criptoactivos. Controller Financiero con expertise en análisis de datos y desarrollo blockchain. 
+                  Especialista en Python, SQL y Power BI con experiencia en ecosistemas Stellar y Avalanche. 
+                  <span className="font-semibold text-orange-600">🏆 Ganador de x2 hackathons internacionales</span> y embajador de tecnologías emergentes.
                 </p>
               </div>
 
