@@ -8,6 +8,50 @@ import ProjectCard from '@/components/ProjectCard';
 const BitcoinDefi = () => {
   const projects = [
     {
+      title: "TrueBlock",
+      description: "🏆 Proyecto ganador de Aleph Hackathon 2025 (Citrea Track). Ecosistema descentralizado diseñado para combatir la desinformación mediante validación pública de noticias con IA, comunidad de validadores y blockchain para garantizar transparencia e inmutabilidad.",
+      technologies: ["Citrea", "Bitcoin L2", "AI", "Blockchain", "Web3"],
+      status: "live" as const,
+      category: "Hackathon Winner",
+      externalLink: "https://github.com/leocagli/trueblock"
+    },
+    {
+      title: "ReFinance",
+      description: "🏆 Ganador del hackathon de Stellar ConstellAr con menciones especiales del equipo core. Nombrado como el proyecto mejor puntuado del evento. Plataforma DeFi para refinanciamiento de préstamos y optimización de tasas en Stellar.",
+      technologies: ["Stellar", "Soroban", "DeFi", "Web3", "ONG"],
+      status: "live" as const,
+      category: "Hackathon Winner"
+    },
+    {
+      title: "Antidote",
+      description: "Aplicación de seguridad para Web3 que implementa filtros anti-spam y protege contra intentos de phishing y poisoning de wallets. Utiliza tácticas de ataque simuladas para identificar y mitigar riesgos en contratos inteligentes y dApps, garantizando la integridad de los activos digitales.",
+      technologies: ["Web3", "Security", "Smart Contracts", "Blockchain"],
+      status: "live" as const,
+      category: "Security"
+    },
+    {
+      title: "Registro.Blockchain",
+      description: "Solución blockchain para el registro automotor argentino que aborda los altos impuestos y tasas asociados con los registros tradicionales. Propone implementar un alivio tributario mediante tecnología blockchain tokenizando los automotores, reduciendo costos y mejorando eficiencia.",
+      technologies: ["Blockchain", "DeFi", "Finanzas", "Criptomonedas", "GovTech"],
+      status: "live" as const,
+      category: "GovTech"
+    },
+    {
+      title: "Tralala Contracts",
+      description: "🌟 Mención Especial en Meridian 2025 - 5to lugar (entre 500+ participantes). Proyecto de educación Web3 - compilador de contratos inteligentes accesible para adultos y niños, democratizando el acceso a la tecnología blockchain.",
+      image: "/lovable-uploads/tralala-logo.jpeg",
+      technologies: ["Stellar", "Soroban", "Education", "Smart Contracts", "Web3"],
+      status: "live" as const,
+      category: "Hackathon"
+    },
+    {
+      title: "ZkLeaks",
+      description: "🌟 Mención especial en hackathon. Proyecto destinado a modernizar Wikileaks con ZK proof (Zero-Knowledge proofs) para proteger la identidad de informantes mientras se mantiene la integridad de la información.",
+      technologies: ["Zero-Knowledge", "Privacy", "Web3", "Blockchain"],
+      status: "live" as const,
+      category: "Hackathon"
+    },
+    {
       title: "Portfolio Diversificado BTC + Metales",
       description: "Plataforma de diversificación inteligente para Bitcoin y metales preciosos tokenizados. Calculadora con precios en tiempo real para construir portafolios equilibrados en DeFi.",
       image: "/lovable-uploads/ef8778f2-a78c-4887-b7f6-9a1238a486ea.png",
@@ -15,35 +59,6 @@ const BitcoinDefi = () => {
       status: "development" as const,
       internalLink: "/bitcoin-defi/calculator",
       category: "DeFi"
-    },
-    {
-      title: "Aleph 2025 - Track Citrea",
-      description: "🏆 Proyecto ganador del Hackathon Aleph 2025 en el track de Citrea. Solución innovadora en el ecosistema Bitcoin Layer 2.",
-      technologies: ["Bitcoin", "Citrea", "Smart Contracts", "Web3"],
-      status: "live" as const,
-      category: "Hackathon Winner"
-    },
-    {
-      title: "Stellar ConstellAr",
-      description: "🏆 Ganador como Mejor Proyecto con ReFinance. Plataforma financiera descentralizada construida sobre Stellar Network.",
-      technologies: ["Stellar", "Soroban", "ReFinance", "DeFi"],
-      status: "live" as const,
-      category: "Hackathon Winner"
-    },
-    {
-      title: "Midnight Hackathon",
-      description: "🌟 Mención Especial en el Hackathon Midnight. Proyecto enfocado en privacidad y seguridad en blockchain.",
-      technologies: ["Midnight", "Privacy", "Zero-Knowledge"],
-      status: "live" as const,
-      category: "Hackathon"
-    },
-    {
-      title: "Latin hack - Nerdconf",
-      description: "🌟 Mención Especial. Tralala Contracts: Aplicación para crear contratos inteligentes de forma accesible tanto para adultos como para niños.",
-      image: "/lovable-uploads/tralala-logo.jpeg",
-      technologies: ["Smart Contracts", "Web3", "Education"],
-      status: "live" as const,
-      category: "Hackathon"
     }
   ];
 

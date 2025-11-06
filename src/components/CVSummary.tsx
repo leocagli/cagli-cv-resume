@@ -52,18 +52,26 @@ const CVSummary = () => {
         </h2>
         <div className="space-y-3">
           <div className="border-l-2 border-blue-600 pl-3">
-            <h3 className="font-bold text-slate-900 text-sm">Blockchain & Web3 Developer</h3>
-            <p className="text-xs text-slate-600 mb-1">Freelance | 2024 - Actualidad</p>
+            <h3 className="font-bold text-slate-900 text-sm">Analista Logístico - Supervisor</h3>
+            <p className="text-xs text-slate-600 mb-1">Food Packaging | Sep 2023 - Ene 2024</p>
             <ul className="text-xs text-slate-700 space-y-1">
-              <li>• Desarrollo de dApps y smart contracts en Stellar, Citrea, Cardano</li>
-              <li>• Proyectos ganadores: Portfolio DeFi, plataformas de staking descentralizado</li>
+              <li>• Facturación y control de rutas de distribución</li>
+              <li>• Elaboración de reportes ejecutivos con Excel y Power BI</li>
             </ul>
           </div>
           <div className="border-l-2 border-slate-400 pl-3">
-            <h3 className="font-bold text-slate-900 text-sm">Analista Administrativo</h3>
-            <p className="text-xs text-slate-600 mb-1">Municipalidad de Salta | 2024</p>
+            <h3 className="font-bold text-slate-900 text-sm">Analista Financiero - Responsable de Pagos</h3>
+            <p className="text-xs text-slate-600 mb-1">Congress Rental | Nov 2022 - Sep 2023</p>
             <ul className="text-xs text-slate-700 space-y-1">
-              <li>• Gestión administrativa y análisis de procesos</li>
+              <li>• Gestión de órdenes de pago y retenciones fiscales</li>
+              <li>• Conciliaciones bancarias y contables con sistemas ERP</li>
+            </ul>
+          </div>
+          <div className="border-l-2 border-slate-400 pl-3">
+            <h3 className="font-bold text-slate-900 text-sm">Asesor Financiero - Bitcoin.Defi</h3>
+            <p className="text-xs text-slate-600 mb-1">Dic 2020 - Actualidad</p>
+            <ul className="text-xs text-slate-700 space-y-1">
+              <li>• Asesoramiento en inversiones en criptomonedas</li>
             </ul>
           </div>
         </div>
