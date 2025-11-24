@@ -169,6 +169,69 @@ const EducationSection = () => {
       status: "Completado",
       type: "tech",
       priority: 20
+    },
+    {
+      title: "Excel Avanzado: Toma de Decisiones para PYMES",
+      institution: "UTN + CAME",
+      period: "2025",
+      details: "20 horas",
+      status: "Completado",
+      type: "management",
+      priority: 21
+    },
+    {
+      title: "Educación Financiera para PYMES",
+      institution: "UTN + CAME",
+      period: "2025",
+      details: "20 horas",
+      status: "Completado",
+      type: "finance",
+      priority: 22
+    },
+    {
+      title: "Planificación y Gestión de Inventarios",
+      institution: "UTN + CAME",
+      period: "2025",
+      details: "20 horas",
+      status: "Completado",
+      type: "management",
+      priority: 23
+    },
+    {
+      title: "Gestión de Costos y Precios para la Industria PyME",
+      institution: "UTN + CAME",
+      period: "2025",
+      details: "20 horas",
+      status: "Completado",
+      type: "finance",
+      priority: 24
+    },
+    {
+      title: "Excel Avanzado: Análisis de Datos para PYMES",
+      institution: "UTN + CAME",
+      period: "2025",
+      details: "20 horas",
+      status: "Completado",
+      type: "tech",
+      priority: 25
+    },
+    {
+      title: "Negociaciones: Teoría, Prácticas y Nuevos Enfoques",
+      institution: "UTN + CAME",
+      period: "2025",
+      details: "20 horas",
+      status: "Completado",
+      type: "management",
+      priority: 26
+    },
+    {
+      title: "Formación en Mercado de Capitales para PYMES",
+      institution: "UTN + CAME",
+      period: "2025",
+      details: "20 horas",
+      status: "Completado",
+      type: "finance",
+      priority: 27
     }
   ];
 

@@ -51,7 +51,7 @@ const ProfileHeader = () => {
                 <h2 className="text-base font-semibold text-slate-700 mb-1.5">Resumen Profesional</h2>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   +13 años de experiencia en mercados de capitales y criptoactivos. Controller Financiero con expertise en análisis de datos y desarrollo blockchain. 
-                  <span className="font-semibold text-orange-600">🏆 Ganador de x2 hackathons internacionales</span> y embajador de tecnologías emergentes.
+                  <span className="font-semibold text-orange-600">🏆 Ganador de x4 hackathons internacionales</span> y embajador de tecnologías emergentes.
                 </p>
               </div>
 
