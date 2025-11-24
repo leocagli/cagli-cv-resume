@@ -43,49 +43,35 @@ const Index = () => {
     html2pdf().set(opt).from(summaryRef.current).save();
   };
 
+  const handleOpenSummaryDialog = () => {
+    setShowSummaryDialog(true);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50">
-      {/* Botones de descarga flotantes */}
-      <div className="fixed top-4 right-4 z-50 flex flex-col gap-2">
-        <Button 
-          onClick={handleDownloadPDF}
-          className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
-          size="lg"
-        >
-          <Download className="mr-2" size={20} />
-          CV Completo (PDF)
-        </Button>
-        
-        <Dialog open={showSummaryDialog} onOpenChange={setShowSummaryDialog}>
-          <DialogTrigger asChild>
+      <Dialog open={showSummaryDialog} onOpenChange={setShowSummaryDialog}>
+        <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl">Resumen de CV - Una Página</DialogTitle>
             <Button 
-              className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
-              size="lg"
+              onClick={handleDownloadSummaryPDF}
+              className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white"
             >
-              <FileText className="mr-2" size={20} />
-              Resumen (1 Página)
+              <Download className="mr-2" size={16} />
+              Descargar Resumen PDF
             </Button>
-          </DialogTrigger>
-          <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
-            <DialogHeader>
-              <DialogTitle className="text-2xl">Resumen de CV - Una Página</DialogTitle>
-              <Button 
-                onClick={handleDownloadSummaryPDF}
-                className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white"
-              >
-                <Download className="mr-2" size={16} />
-                Descargar Resumen PDF
-              </Button>
-            </DialogHeader>
-            <div ref={summaryRef}>
-              <CVSummary />
-            </div>
-          </DialogContent>
-        </Dialog>
-      </div>
+          </DialogHeader>
+          <div ref={summaryRef}>
+            <CVSummary />
+          </div>
+        </DialogContent>
+      </Dialog>
 
       <div className="max-w-4xl mx-auto px-4 py-4" ref={cvRef}>
-        <ProfileHeader />
+        <ProfileHeader 
+          onDownloadCV={handleDownloadPDF}
+          onDownloadSummary={handleOpenSummaryDialog}
+        />
         
         <div className="space-y-4 mt-4">
           <ExperienceSection />
