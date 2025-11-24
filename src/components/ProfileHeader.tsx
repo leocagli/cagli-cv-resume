@@ -1,10 +1,16 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, Github, Trophy, Star } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github, Trophy, Download, FileText } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import profileImage from '/lovable-uploads/74e0b6e2-f1b5-4142-b1ea-0539f1dc52c5.png';
 
-const ProfileHeader = () => {
+interface ProfileHeaderProps {
+  onDownloadCV: () => void;
+  onDownloadSummary: () => void;
+}
+
+const ProfileHeader: React.FC<ProfileHeaderProps> = ({ onDownloadCV, onDownloadSummary }) => {
   return (
     <header>
       <Card className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 shadow-2xl border-0">
@@ -33,11 +39,32 @@ const ProfileHeader = () => {
                   Enzo Leonardo Cagliero Shictong
                 </h1>
                 
-                <div className="mb-2">
+                <div className="mb-3">
                   <h2 className="sr-only">Título Profesional</h2>
                   <Badge className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-1.5 text-sm font-semibold rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
                     CONTROLLER FINANCIERO | ANALISTA DE DATOS | DESARROLLADOR BLOCKCHAIN
                   </Badge>
+                </div>
+
+                {/* Botones de descarga integrados */}
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <Button 
+                    onClick={onDownloadCV}
+                    className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-md hover:shadow-lg transition-all duration-300 text-xs"
+                    size="sm"
+                  >
+                    <Download className="mr-1.5" size={14} />
+                    CV Completo (PDF)
+                  </Button>
+                  
+                  <Button 
+                    onClick={onDownloadSummary}
+                    className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white shadow-md hover:shadow-lg transition-all duration-300 text-xs"
+                    size="sm"
+                  >
+                    <FileText className="mr-1.5" size={14} />
+                    Resumen (1 Página)
+                  </Button>
                 </div>
                 
                 {/* Keywords for ATS */}
