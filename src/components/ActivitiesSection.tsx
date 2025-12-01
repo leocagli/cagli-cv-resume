@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ChevronDown, ChevronUp, Trophy, Star, Award, Users, Rocket, Mic, Calendar } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 
 interface Activity {
   name: string;
@@ -131,34 +129,6 @@ const ActivitiesSection = () => {
         </CollapsibleTrigger>
         <CollapsibleContent>
           <CardContent className="pt-0">
-            {/* Bitcoin.Defi Project Link */}
-            <Link to="/bitcoin-defi">
-              <div className="mb-6 p-6 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 rounded-xl border-2 border-blue-400 hover:from-blue-500 hover:via-blue-400 hover:to-blue-500 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer group">
-                <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0">
-                    <img 
-                      src="/lovable-uploads/ef8778f2-a78c-4887-b7f6-9a1238a486ea.png" 
-                      alt="Bitcoin.defi Logo" 
-                      className="w-16 h-16 rounded-lg shadow-lg group-hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <Rocket className="text-white" size={20} />
-                      <h3 className="text-xl font-bold text-white">Bitcoin.Defi</h3>
-                    </div>
-                    <p className="text-blue-100 text-sm">Click aquí para ver proyectos Web3 y DeFi</p>
-                  </div>
-                  <Button 
-                    className="bg-white text-blue-600 hover:bg-blue-50 font-semibold"
-                    size="sm"
-                  >
-                    Ver Portfolio →
-                  </Button>
-                </div>
-              </div>
-            </Link>
-
             <div className="space-y-3">
               {Object.entries(groupedActivities).map(([category, categoryActivities]) => (
                 <div key={category} className="space-y-1.5">
