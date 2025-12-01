@@ -50,10 +50,25 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ onDownloadCV, onDownloadS
           </h2>
         </div>
         
-        <p className="text-foreground text-sm md:text-base leading-relaxed max-w-4xl">
+        <p className="text-foreground text-sm md:text-base leading-relaxed max-w-4xl mb-4">
           +13 años de experiencia en mercados de capitales y criptoactivos. Controller Financiero con expertise en análisis de datos y desarrollo blockchain. 
           <span className="font-bold"> 🏆 Ganador de x4 hackathons internacionales</span> y embajador de tecnologías emergentes. Fundador de bitcoin.defi, especializado en Web3, estrategias DeFi, activos tokenizados y programación de smart contracts.
         </p>
+        
+        <a 
+          href="/bitcoin-defi"
+          className="inline-flex items-center gap-3 px-4 py-3 border-2 border-foreground hover:bg-foreground hover:text-background transition-colors"
+        >
+          <img 
+            src="/lovable-uploads/ef8778f2-a78c-4887-b7f6-9a1238a486ea.png" 
+            alt="Bitcoin.defi Logo" 
+            className="w-6 h-6 rounded"
+          />
+          <div className="flex-1">
+            <span className="text-sm font-bold uppercase">Ver Portfolio →</span>
+            <p className="text-xs opacity-80">Proyectos Web3 y DeFi</p>
+          </div>
+        </a>
       </Card>
 
       {/* Contact & Actions */}
