@@ -30,10 +30,9 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ onDownloadCV, onDownloadS
           {/* Name and Role */}
           <div className="flex-1 space-y-4">
             <div>
-              <p className="text-sm uppercase tracking-wider text-muted-foreground mb-2">© 2025</p>
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-none tracking-tight text-foreground">
                 ENZO LEONARDO<br />
-                CAGLIERO SHICTONG 👨‍💼
+                CAGLIERO SHICTONG
               </h1>
             </div>
             
@@ -48,7 +47,7 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ onDownloadCV, onDownloadS
       <Card className="bg-background border border-border p-6 md:p-8">
         <div className="flex items-start justify-between mb-4">
           <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight">
-            SOBRE MÍ 🚀
+            SOBRE MÍ
           </h2>
           <Button 
             variant="default"
@@ -68,7 +67,7 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ onDownloadCV, onDownloadS
       <Card className="bg-background border border-border p-6 md:p-8">
         <div className="flex items-start justify-between mb-6">
           <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight">
-            CONTACTO 📫
+            CONTACTO
           </h2>
         </div>
 
@@ -153,7 +152,7 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ onDownloadCV, onDownloadS
       <Card className="bg-background border border-border p-6 md:p-8">
         <div className="flex items-start justify-between mb-6">
           <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight">
-            COMPETENCIAS 💼
+            COMPETENCIAS
           </h2>
         </div>
         
