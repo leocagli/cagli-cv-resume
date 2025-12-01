@@ -45,16 +45,10 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ onDownloadCV, onDownloadS
 
       {/* About Me Section */}
       <Card className="bg-background border border-border p-6 md:p-8">
-        <div className="flex items-start justify-between mb-4">
+        <div className="mb-4">
           <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight">
             SOBRE MÍ
           </h2>
-          <Button 
-            variant="default"
-            className="bg-foreground text-background hover:bg-foreground/90 rounded-sm uppercase text-xs font-bold"
-          >
-            MI PERFIL →
-          </Button>
         </div>
         
         <p className="text-foreground text-sm md:text-base leading-relaxed max-w-4xl">
