@@ -28,15 +28,14 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ onDownloadCV, onDownloadS
           </div>
 
           {/* Name and Role */}
-          <div className="flex-1 space-y-4">
+          <div className="flex-1 space-y-3">
             <div>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-none tracking-tight text-foreground">
-                ENZO LEONARDO<br />
-                CAGLIERO SHICTONG
+              <h1 className="text-2xl md:text-3xl font-bold uppercase tracking-tight text-foreground">
+                ENZO LEONARDO CAGLIERO SHICTONG
               </h1>
             </div>
             
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl uppercase tracking-wide">
+            <p className="text-sm md:text-base text-muted-foreground uppercase tracking-wide">
               CONTROLLER FINANCIERO | ANALISTA DE DATOS | DESARROLLADOR BLOCKCHAIN
             </p>
           </div>
